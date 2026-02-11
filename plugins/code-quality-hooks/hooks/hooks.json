@@ -1,0 +1,25 @@
+{
+  "description": "Clean code and dependency compliance review on session stop",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "Review any code changes made in this session against clean code principles (naming, functions, smells, error handling, DRY, YAGNI, KISS). Reference ~/.config/opencode/rules/clean-code-rules.md for the full rule set. Report only blocking issues that must be fixed. If no code was changed or no issues found, respond with 'No issues.'",
+            "timeout": 90
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "Review any dependency usage in code changes made this session. Verify: version identified from package file, documentation consulted, idiomatic usage (not reinventing), source inspected when needed. Reference ~/.config/opencode/rules/dependency-compliance-rules.md for the full rule set. Report only blocking issues. If no dependencies were used or no issues found, respond with 'No issues.'",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}

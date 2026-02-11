@@ -1,0 +1,7 @@
+{
+  "name": "code-quality-hooks",
+  "description": "Clean code and dependency compliance review hooks for session stop",
+  "author": {
+    "name": "William Callahan"
+  }
+}
